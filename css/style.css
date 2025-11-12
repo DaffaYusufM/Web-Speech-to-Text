@@ -1,0 +1,109 @@
+/* Reset default style */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+/* Full screen center */
+body {
+  background: linear-gradient(135deg, #8ec5fc, #e0c3fc);
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Container utama */
+.container-header {
+  background: #fff;
+  padding: 2rem 3rem;
+  border-radius: 20px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  width: 90%;
+  max-width: 500px;
+}
+
+/* Judul */
+.container-header h2 {
+  color: #4b4b4b;
+  font-size: 1.8rem;
+  margin-bottom: 1.5rem;
+  letter-spacing: 1px;
+}
+
+/* Container voice */
+.container-voice {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Textarea */
+textarea {
+  width: 100%;
+  border: 2px solid #ccc;
+  border-radius: 12px;
+  padding: 1rem;
+  font-size: 1rem;
+  resize: none;
+  outline: none;
+  transition: border 0.3s ease;
+  background-color: #fafafa;
+}
+
+textarea:focus {
+  border-color: #8ec5fc;
+  background-color: #fff;
+}
+
+/* Tombol */
+button {
+  margin-top: 1rem;
+  padding: 0.8rem 1.5rem;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  color: #fff;
+}
+
+#startBtn {
+  background-color: #4caf50;
+}
+
+#startBtn:hover {
+  background-color: #43a047;
+}
+
+#stopBtn {
+  background-color: #e53935;
+  margin-left: 0.5rem;
+}
+
+#stopBtn:hover {
+  background-color: #d32f2f;
+}
+
+/* Responsif */
+@media (max-width: 480px) {
+  .container-header {
+    padding: 1.5rem 1.2rem;
+  }
+
+  textarea {
+    font-size: 0.9rem;
+  }
+
+  button {
+    width: 100%;
+    margin-top: 0.8rem;
+  }
+
+  #stopBtn {
+    margin-left: 0;
+  }
+}
