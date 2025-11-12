@@ -88,6 +88,16 @@ button {
   background-color: #d32f2f;
 }
 
+#clearBtn {
+  background-color: #fbc02d;
+  margin-left: 0.5rem;
+}
+
+#clearBtn:hover {
+  background-color: #f9a825;
+}
+
+
 /* Responsif */
 @media (max-width: 480px) {
   .container-header {
@@ -107,3 +117,4 @@ button {
     margin-left: 0;
   }
 }
+

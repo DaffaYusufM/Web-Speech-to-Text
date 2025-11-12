@@ -5,33 +5,41 @@
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <div class="container-header">
-        <h2>Voice Note</h2>
-        <div class="container-voice">
-            <textarea id="note" rows="6" cols="50" placeholder="Hasil suara akan muncul di sini..."></textarea><br>
-            <button id="startBtn">🎤 Mulai Rekam</button>
-            <button id="stopBtn">🛑 Berhenti</button>
-        </div>
+  <div class="container-header">
+    <h2>Voice Note</h2>
+    <div class="container-voice">
+      <textarea id="note" rows="6" cols="50" placeholder="Hasil suara akan muncul di sini..."></textarea><br>
+      <button id="startBtn">🎤 Mulai Rekam</button>
+      <button id="stopBtn">🛑 Berhenti</button>
+      <button id="clearBtn">🧹 Clear</button>
     </div>
+  </div>
 
   <script>
+    // Cek dukungan SpeechRecognition
     const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
     const recognition = new SpeechRecognition();
     recognition.lang = 'id-ID';
     recognition.continuous = true;
-    
+
+    // Ambil elemen
     const note = document.getElementById('note');
     const startBtn = document.getElementById('startBtn');
     const stopBtn = document.getElementById('stopBtn');
+    const clearBtn = document.getElementById('clearBtn');
 
+    // Fungsi tombol
     startBtn.onclick = () => recognition.start();
     stopBtn.onclick = () => recognition.stop();
+    clearBtn.onclick = () => note.value = "";
 
+    // Ketika hasil suara diterima
     recognition.onresult = (event) => {
       const transcript = event.results[event.resultIndex][0].transcript;
       note.value += transcript + " ";
     };
 
+    // Tangani error
     recognition.onerror = (event) => console.error("Error:", event.error);
   </script>
 </body>
